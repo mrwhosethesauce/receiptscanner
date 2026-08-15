@@ -1,12 +1,12 @@
 # Receipt Scanner
 
-A MERN-stack expense tracker that uses Claude (Anthropic) to read receipt photos and generate personalized financial tips. Deployed as a single Vercel project (Express API as serverless functions + a Vite/React frontend).
+A MERN-stack expense tracker that uses Google Gemini to read receipt photos and generate personalized financial tips. Deployed as a single Vercel project (Express API as serverless functions + a Vite/React frontend).
 
 ## Stack
 - **Frontend**: React (Vite) + Tailwind CSS + React Router + Recharts
 - **Backend**: Express, running as Vercel serverless functions
 - **Database**: MongoDB Atlas (via Mongoose)
-- **AI**: Claude (`@anthropic-ai/sdk`) — vision for receipt extraction, text for financial tips
+- **AI**: Google Gemini (`@google/genai`, `gemini-2.5-flash`, free tier) — vision for receipt extraction, text for financial tips
 - **File storage**: Vercel Blob
 - **Auth**: JWT (email/password)
 
@@ -20,7 +20,7 @@ A MERN-stack expense tracker that uses Claude (Anthropic) to read receipt photos
 2. Copy `.env.example` to `.env` and fill in:
    - `MONGODB_URI` — a MongoDB Atlas connection string (free M0 cluster works)
    - `JWT_SECRET` — any long random string
-   - `ANTHROPIC_API_KEY` — from https://console.anthropic.com/
+   - `GEMINI_API_KEY` — free, from https://aistudio.google.com/apikey
    - `BLOB_READ_WRITE_TOKEN` — from your Vercel project's Storage tab (create a Blob store first)
 
 3. Run locally with the Vercel CLI (recommended — matches production routing):

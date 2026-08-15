@@ -23,7 +23,7 @@ export default function Tips() {
     <div className="max-w-2xl mx-auto space-y-6">
       <div>
         <h1 className="text-2xl font-semibold">Financial tips</h1>
-        <p className="text-slate-500 mt-1">Claude analyzes your spending and suggests ways to save.</p>
+        <p className="text-slate-500 mt-1">Gemini analyzes your spending and suggests ways to save.</p>
       </div>
 
       <button

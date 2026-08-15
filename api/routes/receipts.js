@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const { put } = require('@vercel/blob');
 const requireAuth = require('../middleware/auth');
-const { extractReceipt } = require('../utils/claude');
+const { extractReceipt } = require('../utils/gemini');
 
 const router = express.Router();
 router.use(requireAuth);

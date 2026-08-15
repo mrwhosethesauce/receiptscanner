@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Expense = require('../models/Expense');
 const requireAuth = require('../middleware/auth');
-const { generateTips } = require('../utils/claude');
+const { generateTips } = require('../utils/gemini');
 
 const router = express.Router();
 router.use(requireAuth);
