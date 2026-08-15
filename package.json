@@ -1,0 +1,14 @@
+{
+  "name": "receiptscanner",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "api",
+    "client"
+  ],
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "npm run build --workspace client",
+    "install:all": "npm install"
+  }
+}
