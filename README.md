@@ -33,10 +33,7 @@ vercel.json     Routes /api/** to the Express function, everything else to the s
 
 ## Setup
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+1. From the repo root, run `npm install` — this installs dependencies for both `api/` and `client/` in one go, via npm workspaces.
 
 2. Copy `.env.example` to `.env` and fill in:
    - `MONGODB_URI` — a MongoDB Atlas connection string (free M0 cluster works)
