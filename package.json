@@ -7,7 +7,6 @@
     "client"
   ],
   "scripts": {
-    "dev": "vercel dev",
     "build": "npm run build --workspace client",
     "install:all": "npm install"
   }

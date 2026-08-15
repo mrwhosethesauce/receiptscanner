@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 import { api } from '../api/client';
+import { formatCurrency } from '../constants';
 
 const COLORS = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#06b6d4', '#a855f7', '#ec4899', '#84cc16', '#64748b'];
 
@@ -43,7 +44,7 @@ export default function Dashboard() {
       <div>
         <h1 className="text-2xl font-semibold">Dashboard</h1>
         <p className="text-slate-500 mt-1">
-          Total spent: <span className="font-semibold text-slate-900">${totalSpent.toFixed(2)}</span> across {expenses.length} expenses
+          Total spent: <span className="font-semibold text-slate-900">{formatCurrency(totalSpent)}</span> across {expenses.length} expenses
         </p>
       </div>
 
@@ -60,7 +61,7 @@ export default function Dashboard() {
                     <Cell key={entry.category} fill={COLORS[i % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip />
+                <Tooltip formatter={(value) => formatCurrency(value)} />
                 <Legend />
               </PieChart>
             </ResponsiveContainer>
@@ -72,7 +73,7 @@ export default function Dashboard() {
               <BarChart data={byMonth}>
                 <XAxis dataKey="month" fontSize={12} />
                 <YAxis fontSize={12} />
-                <Tooltip />
+                <Tooltip formatter={(value) => formatCurrency(value)} />
                 <Bar dataKey="total" fill="#6366f1" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>

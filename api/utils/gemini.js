@@ -44,7 +44,7 @@ async function generateTips(summary) {
 
 ${JSON.stringify(summary, null, 2)}
 
-Based on this spending pattern, give 3-5 concrete, specific, actionable financial tips to help this person save money or budget better. Reference actual categories/amounts from the data. Return the tips as a JSON array of strings, and nothing else.`;
+Based on this spending pattern, give 3-5 concrete, specific, actionable financial tips to help this person save money or budget better. Reference actual categories/amounts from the data, formatting all money amounts in Indian Rupees using the ₹ symbol (e.g. ₹500), never $. Return the tips as a JSON array of strings, and nothing else.`;
 
   const response = await ai.models.generateContent({
     model: MODEL,

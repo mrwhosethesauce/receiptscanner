@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/client';
+import { formatCurrency } from '../constants';
 
 export default function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -60,7 +61,7 @@ export default function Expenses() {
                       {e.category}
                     </span>
                   </td>
-                  <td className="px-4 py-2 text-right">${e.amount.toFixed(2)}</td>
+                  <td className="px-4 py-2 text-right">{formatCurrency(e.amount)}</td>
                   <td className="px-4 py-2">
                     {e.receiptImageUrl && (
                       <a href={e.receiptImageUrl} target="_blank" rel="noreferrer" className="text-indigo-600 underline">
